@@ -4,9 +4,21 @@ This repository includes the Jupyter notebooks for discussion classes of ECS-124
 
 You can get the notebook for each session by pulling the repo just before the class begins.
 
+These instructions will work only on Mac and Linux systems. If you're on Windows things will be very different. I suggest dual-booting a Linux along your Windows or using a virtual machine to get a Linux distribution such as Ubuntu working. Those on Windows 10 can use the Windows Subsystem for Linux (WSL) to get a working linux distribution with much less hassle. You can follow [these](https://docs.microsoft.com/en-us/windows/wsl/install-win10) instructions for getting WSL to work.
+
 # Setup
 
-Jupyter for running these, plus obviously Python3.
+First clone this repository:
+
+```
+git clone https://github.com/Parsoa/ECS124-Fall-2020-Discussions
+```
+
+Navigate to the cloned directory:
+
+```
+cd ECS124-Fall-2020-Discussions
+```
 
 We'll set up everything inside a virtualenv for easier management of dependencies. First install virtualenv if you don't have it already:
 
