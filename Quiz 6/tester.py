@@ -10,8 +10,7 @@ with open('rosalind_ba5c.txt') as input_file:
 v = lines[0].strip()
 w = lines[1].strip()
 sys.setrecursionlimit(max(len(v), len(w)) * 2 + 1)
-b = lcs.lcs(v, w)
-l = lcs.backtrack(v, w, len(v), len(w))
+l = lcs.main(v, w)
 
 if len(l) == len(answer):
     it = iter(v)
