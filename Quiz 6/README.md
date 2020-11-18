@@ -23,3 +23,14 @@ there is dummy file provided that will just print the solution for the example i
 ```
 ./tester.sh dummy.py
 ```
+
+If you get a recursion depth error, add the following line to the beginning of your code (before you run `OutputLCS`), here `v` and `w` are the input strings:
+
+```
+import sys
+with open('rosalind.txt') as txt_file:
+    v = txt_file.readline().strip()
+    w = txt_file.readline().strip()
+sys.setrecursionlimit(max(len(v), len(w)) * 2 + 1)
+# now call lcs functions
+```
