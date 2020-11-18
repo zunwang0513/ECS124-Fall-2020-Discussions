@@ -12,3 +12,11 @@ lcs = lcs.main(v, w)
 Your code will work as long as you have the `main` function defined. As there are multiple LCS strings possible, the tester will check if your output matches the LCS length and if it is a subsequences of both inputs.
 
 Look at the example file `lcs.py` for a sekelton code.
+
+You can run the tester as below:
+
+```
+python tester.py
+```
+
+Your `lcs.py` file should be in the same directory as the tester.
