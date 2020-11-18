@@ -2,27 +2,23 @@
 
 For this assignment, upload a single python file named `lcs.py`. Your submission won't be graded if it has a different file name.
 
-Your code should open a text file named `rosalind.txt` and read the input from it:
+Your code must have two functions defined with the exact names as below:
+* the `lcs` function (equivalent to LCSBackTrack from the pseudocode)
+* the `backtrack` function (equivalent to OutputLCS from the backtrack)
+
+The program `teser.py` will import these functions from your code and use them to calculate the LCS. The tester will load the strings itself and will call the corresponding functions from your code with them:
 
 ```
-with open('rosalind.txt') as input_file:
-    # parse input
+import lcs # your code
+b = lcs.lcs(v, w) # calls the lcs function from your code
+l = lcs.backtrack(b, v, len(v), len(w)) # calls the backtrack function from your code
 ```
 
-An example input file is provided in this directory.
+As long as you have these functions defined with the same parameters your code will work. As there are multiple LCS strings possible, the tester will check if your output matches the LCS length and if it is a subsequences of both inputs.
 
-The script `tester.sh` will run your code on the given input and grade it accordingly. You should make sure your code works with this script. For final grading a larger input file will be used to test your codes.
+Look at the updated sample file `dummy.py` for a sekelton code.
 
-```
-chmod +x tester.sh
-./tester.sh /path/to/your/python/file
-```
-
-there is dummy file provided that will just print the solution for the example input:
-
-```
-./tester.sh dummy.py
-```
+If you have already solved this assignment, only renaming your functions should be enough to make it pass.
 
 If you get a recursion depth error, add the following line to the beginning of your code (before you run `OutputLCS`), here `v` and `w` are the input strings:
 

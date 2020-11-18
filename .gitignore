@@ -3,4 +3,5 @@ venv/
 
 *.fastq
 *.fastq.gz
+*parsoa*
 
