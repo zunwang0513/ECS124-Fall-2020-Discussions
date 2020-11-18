@@ -14,19 +14,8 @@ b = lcs.lcs(v, w) # calls the lcs function from your code
 l = lcs.backtrack(b, v, len(v), len(w)) # calls the backtrack function from your code
 ```
 
-As long as you have these functions defined with the same parameters your code will work. As there are multiple LCS strings possible, the tester will check if your output matches the LCS length and if it is a subsequences of both inputs.
+Your code will work as long as you have these functions defined with the same parameters as in the pseudocode. As there are multiple LCS strings possible, the tester will check if your output matches the LCS length and if it is a subsequences of both inputs.
 
-Look at the updated sample file `dummy.py` for a sekelton code.
+Look at the example file `lcs.py` for a sekelton code.
 
 If you have already solved this assignment, only renaming your functions should be enough to make it pass.
-
-If you get a recursion depth error, add the following line to the beginning of your code (before you run `OutputLCS`), here `v` and `w` are the input strings:
-
-```
-import sys
-with open('rosalind.txt') as txt_file:
-    v = txt_file.readline().strip()
-    w = txt_file.readline().strip()
-sys.setrecursionlimit(max(len(v), len(w)) * 2 + 1)
-# now call lcs functions
-```
