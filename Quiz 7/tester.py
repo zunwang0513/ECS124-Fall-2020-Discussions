@@ -3,7 +3,7 @@ import time
 import threading
 
 try:
-    import neighbors as neighbors
+    import parsoa as neighbors
 except Exception as e:
     print(e)
     print('Import Fail')
@@ -39,17 +39,22 @@ class RunWithTimeout(object):
             self.answer = 'Fail'
         return self.answer
 
-n = 4
-d = [[0, 23, 27, 20],
-    [23, 0, 30, 28],
-    [27, 30, 0, 30],
-    [20, 28, 30, 0]]
-a = {}
-a[1] = {5: 13.50}
-a[2] = {5: 16.50}
-a[3] = {4: 12.00}
-a[4] = {5: 2.00, 0: 8.00, 3: 12.00}
-a[5] = {1: 13.50, 2: 16.50, 4: 2.00}
+with open('rosalind.txt') as f:
+    n = int(f.readline())
+    d = []
+    for i in range(n):
+        d.append([int(t) for t in f.readline().split()])
+t = {}
+with open('rosalind.out') as f:
+    for line in f.readlines():
+        i = line.find('-')
+        a = int(line[0: i])
+        j = line.find(':')
+        b = int(line[i + 2: j])
+        w = float(line[j + 1:])
+        if not a in t:
+            t[a] = {}
+        t[a][b] = w
 
 try:
     proc = RunWithTimeout(neighbors.main, (n, d))
@@ -67,9 +72,9 @@ if b == None:
     print('Time')
     exit()
 
-for key in a:
-    for node in a[key]:
-        if key in b and node in b[key] and b[key][node] == a[key][node]:
+for key in t:
+    for node in t[key]:
+        if key in b and node in b[key] and b[key][node] == t[key][node]:
             pass
         else:
             print('Answer Fail')
