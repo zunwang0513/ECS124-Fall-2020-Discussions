@@ -3,7 +3,7 @@ import time
 import threading
 
 try:
-    import parsoa as neighbors
+    import neighbors as neighbors
 except Exception as e:
     print(e)
     print('Import Fail')
